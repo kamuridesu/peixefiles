@@ -3,7 +3,7 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR --export NVM_DIR:/home/kamuri/\x2envm
 SETUVAR --export SDKMAN_DIR:/home/kamuri/\x2esdkman
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2e
 SETUVAR _fish_abbr_gb:git\x20branch
@@ -16,6 +16,11 @@ SETUVAR _fish_abbr_gcn_21_:git\x20commit\x20\x2dv\x20\x2d\x2dno\x2dedit\x20\x2d\
 SETUVAR _fish_abbr_gco:git\x20checkout
 SETUVAR _fish_abbr_ggl:git\x20pull\x20origin\x20main
 SETUVAR _fish_abbr_gp:git\x20push
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1ereitzig/sdkman\x2dfor\x2dfish\x40v2\x2e1\x2e0
+SETUVAR _fisher_reitzig_2F_sdkman_2D_for_2D_fish_40_v2_2E_31_2E_30__files:\x7e/\x2econfig/fish/functions/sdk\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/sdk\x2efish\x1e\x7e/\x2econfig/fish/completions/sdk\x2efish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:747369
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:99cc99
