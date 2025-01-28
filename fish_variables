@@ -3,7 +3,7 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR --export NVM_DIR:/home/kamuri/\x2envm
 SETUVAR --export SDKMAN_DIR:/home/kamuri/\x2esdkman
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2e
 SETUVAR _fish_abbr_gb:git\x20branch
