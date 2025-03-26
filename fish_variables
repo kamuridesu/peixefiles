@@ -1,9 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export CCACHE_PREFIX:icecc
+SETUVAR --export CHROME_EXECUTABLE:/var/lib/flatpak/exports/bin/com\x2egoogle\x2eChrome
 SETUVAR --export EDITOR:nvim
 SETUVAR --export NVM_DIR:/home/kamuri/\x2envm
 SETUVAR --export SDKMAN_DIR:/home/kamuri/\x2esdkman
+SETUVAR --export TERM:xterm\x2d256color
 SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2e
@@ -44,10 +46,11 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_features:no\x2dkeyboard\x2dprotocols
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/usr/lib/ccache/bin\x1e/usr/lib/icecream/bin\x1e/home/kamuri/\x2envm\x1e/opt/nvim\x2dlinux64/bin\x1e/home/kamuri/\x2ecargo/bin\x1e/home/kamuri/\x2elocal/bin\x1e/home/kamuri/\x2esdkman\x1e/home/kamuri/go/bin\x1e/usr/local/go/bin\x1e/home/kamuri/\x2ebin
+SETUVAR fish_user_paths:/home/kamuri/\x2elocal/share/android\x2dstudio/bin\x1e/home/kamuri/\x2elocal/share/flutter/bin\x1e/usr/lib/ccache/bin\x1e/usr/lib/icecream/bin\x1e/home/kamuri/\x2envm\x1e/opt/nvim\x2dlinux64/bin\x1e/home/kamuri/\x2ecargo/bin\x1e/home/kamuri/\x2elocal/bin\x1e/home/kamuri/\x2esdkman\x1e/home/kamuri/go/bin\x1e/usr/local/go/bin\x1e/home/kamuri/\x2ebin

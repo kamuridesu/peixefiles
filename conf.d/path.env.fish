@@ -12,4 +12,5 @@ fish_add_path /opt/nvim-linux64/bin
 fish_add_path $HOME/scripts
 fish_add_path /usr/lib/icecream/bin
 fish_add_path /usr/lib/ccache/bin/
-
+fish_add_path $HOME/.local/share/flutter/bin
+fish_add_path $HOME/.local/share/android-studio/bin/
