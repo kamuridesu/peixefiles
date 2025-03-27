@@ -1,7 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export CCACHE_PREFIX:icecc
-SETUVAR --export CHROME_EXECUTABLE:/var/lib/flatpak/exports/bin/com\x2egoogle\x2eChrome
 SETUVAR --export EDITOR:nvim
 SETUVAR --export NVM_DIR:/home/kamuri/\x2envm
 SETUVAR --export SDKMAN_DIR:/home/kamuri/\x2esdkman
