@@ -23,6 +23,8 @@ My configs for pexe (https://fishshell.com/)
 - gc: git commit
 - gcb: git checkout -b
 - gcn!: git commit -v --no-edit --amend
+- gco: git checkout
+- gp: git push
 
 ### Functions
 
