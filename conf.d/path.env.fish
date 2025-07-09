@@ -8,7 +8,7 @@ fish_add_path /usr/local/go/bin
 fish_add_path (go env GOPATH)/bin 
 fish_add_path $HOME/.local/bin 
 fish_add_path $HOME/.cargo/bin 
-fish_add_path /opt/nvim-linux64/bin
+fish_add_path /opt/nvim-linux-x86_64/bin
 fish_add_path $HOME/scripts
 fish_add_path /usr/lib/icecream/bin
 fish_add_path /usr/lib/ccache/bin/
