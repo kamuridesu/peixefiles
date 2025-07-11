@@ -4,7 +4,7 @@ function shredir --description "Wraps shred to delete dirs and shred files"
     set -l DIR "$argv"
     if test -z "$DIR"
         echo "Usage: shredir path/to/dir"
-        exit 1
+        return 1
     end
 
     set -l RM rm -r
@@ -17,14 +17,14 @@ function shredir --description "Wraps shred to delete dirs and shred files"
 
     set -l FILES (find $DIR -type f)
     if test ! $status -eq 0
-        exit $status
+        return $status
     end
 
     for file in $FILES
         echo "Shreding file $file"
-        eval $SHRED $file || exit 1
+        eval $SHRED $file || return 1
     end
 
     echo "Deleting dir $DIR"
-    eval $RM $DIR || exit 1
+    eval $RM $DIR || return 1
 end
