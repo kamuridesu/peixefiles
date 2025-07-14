@@ -7,12 +7,12 @@ function shredir --description "Wraps shred to delete dirs and shred files"
         return 1
     end
 
-    set -l RM rm -r
-    set -l SHRED shred --zero --iterations=10 -u --random-source=/dev/urandom 
+    set -l RM_ARGS -r
+    set -l SHRED_ARGS --zero --iterations=10 -u --random-source=/dev/urandom 
     if set -q _flag_force
         echo "Warning: All files will be force removed"
-        set RM "$RM -f"
-        set SHRED "$SHRED -f"
+        set RM_ARGS "$RM_ARGS -f"
+        set SHRED_ARGS "$SHRED_ARGS -f"
     end
 
     set -l FILES (find $DIR -type f)
@@ -40,11 +40,11 @@ function shredir --description "Wraps shred to delete dirs and shred files"
             set PLACEHOLDER_LENGTH (string length "$MESSAGE")
         end
         echo -en "$MESSAGE\r"
-        eval $SHRED $file || return 1
+        command shred $SHRED_ARGS "$file" || return 1
     end
 
     echo ""
 
     echo "Deleting dir $DIR"
-    eval $RM $DIR || return 1
+    command rm $RM_ARGS "$DIR" || return 1
 end
