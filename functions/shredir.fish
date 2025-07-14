@@ -11,8 +11,8 @@ function shredir --description "Wraps shred to delete dirs and shred files"
     set -l SHRED_ARGS --zero --iterations=10 -u --random-source=/dev/urandom 
     if set -q _flag_force
         echo "Warning: All files will be force removed"
-        set RM_ARGS "$RM_ARGS -f"
-        set SHRED_ARGS "$SHRED_ARGS -f"
+        set RM_ARGS -r -f
+        set SHRED_ARGS --zero --iterations=10 -u --random-source=/dev/urandom -f
     end
 
     set -l FILES (find $DIR -type f)
