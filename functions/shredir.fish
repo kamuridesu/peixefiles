@@ -26,7 +26,7 @@ function shredir --description "Wraps shred to delete dirs and shred files"
     echo "$TOTAL files will be FOREVER DELETED, are you sure? [y/N]: "
     set -l CONFIRM (read)
 
-    if test $CONFIRM != "y"
+    if test "$CONFIRM" != "y"
         return 0
     end
 
