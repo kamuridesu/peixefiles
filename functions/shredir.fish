@@ -3,7 +3,7 @@ function shredir --description "Wraps shred to delete dirs and shred files"
 
     set -l DIR "$argv"
     if test -z "$DIR"
-        echo "Usage: shredir path/to/dir"
+        echo "Usage: shredir path/to/dir-or-file"
         return 1
     end
 
@@ -34,19 +34,17 @@ function shredir --description "Wraps shred to delete dirs and shred files"
     set PLACEHOLDER_LENGTH 0
     set MAX_CONCURRENT_SHREDS 10
     set FAILED_TMP_FILE "/tmp/$(basename (status -f)).failed"
-    echo "" > $FAILED_TMP_FILE
+    echo -n "" > $FAILED_TMP_FILE
 
     for file in $FILES
 
-        while test (count (jobs)) -eq $MAX_CONCURRENT_SHREDS
+        while test (count (jobs)) -ge $MAX_CONCURRENT_SHREDS
         end
     
         set CURRENT_COUNT (math $CURRENT_COUNT + 1)
         echo -en "$(string repeat -n $PLACEHOLDER_LENGTH ' ')\r"
         set MESSAGE "[$CURRENT_COUNT/$TOTAL] Shreding file $file\r"
-        if test (string length "$MESSAGE") -gt $PLACEHOLDER_LENGTH
-            set PLACEHOLDER_LENGTH (string length "$MESSAGE")
-        end
+        set PLACEHOLDER_LENGTH (string length "$MESSAGE")
         echo -en "$MESSAGE\r"
         fish -c "shred $SHRED_ARGS '$file' || echo -e '$file\n' >> $FAILED_TMP_FILE" &
     end
@@ -55,11 +53,13 @@ function shredir --description "Wraps shred to delete dirs and shred files"
 
     echo ""
 
-    if test (count (cat $FAILED_TMP_FILE)) -gt 1
+    if test (count (cat $FAILED_TMP_FILE)) -gt 0
         echo "Could not shred all the files, there are errors."
         return 1
     end
 
-    echo "Deleting dir $DIR"
-    command rm $RM_ARGS "$DIR" || return 1
+    if test -d "$DIR"
+        echo "Deleting dir $DIR"
+        command rm $RM_ARGS "$DIR" || return 1
+    done
 end
