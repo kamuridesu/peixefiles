@@ -61,5 +61,6 @@ function shredir --description "Wraps shred to delete dirs and shred files"
     if test -d "$DIR"
         echo "Deleting dir $DIR"
         command rm $RM_ARGS "$DIR" || return 1
-    done
+    end
+    echo done
 end
