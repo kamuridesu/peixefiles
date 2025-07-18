@@ -49,9 +49,10 @@ function shredir --description "Wraps shred to delete dirs and shred files"
         fish -c "shred $SHRED_ARGS '$file' || echo -e '$file\n' >> $FAILED_TMP_FILE" &
     end
 
-    wait fish
-
-    echo ""
+    if test $TOTAL -ne 0
+        wait fish
+        echo ""
+    end
 
     if test (count (cat $FAILED_TMP_FILE)) -gt 0
         echo "Could not shred all the files, there are errors."
@@ -62,5 +63,4 @@ function shredir --description "Wraps shred to delete dirs and shred files"
         echo "Deleting dir $DIR"
         command rm $RM_ARGS "$DIR" || return 1
     end
-    echo done
 end
