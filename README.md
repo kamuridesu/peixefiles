@@ -30,3 +30,4 @@ My configs for pexe (https://fishshell.com/)
 
 - ggl: git pull origin (git branch --show-current)
 - tf: tofu and notify-send
+- shredir: shred and delete files recursively 
