@@ -1,5 +1,6 @@
 function shredir --description "Wraps shred to delete dirs and shred files"
     argparse f/force -- $argv
+    argparse v/verbose -- $argv
 
     set -l DIR "$argv"
     if test -z "$DIR"
@@ -13,6 +14,10 @@ function shredir --description "Wraps shred to delete dirs and shred files"
         echo "Warning: All files will be force removed"
         set RM_ARGS -r -f
         set SHRED_ARGS --zero --iterations=10 -u --random-source=/dev/urandom -f
+    end
+
+    if set -q _flag_verbose
+        set SHRED_ARGS "$SHRED_ARGS -v"
     end
 
     set -l FILES (find $DIR -type f)

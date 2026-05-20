@@ -26,4 +26,15 @@ end
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set_project_env
+    if string match -q "$HOME/.ssh-pwd/*" "$PWD"
+        set target_host (basename "$PWD")
+        
+        read -P "SSH to $target_host? [Y/n]: " confirm
+        
+        if test -z "$confirm"; or string match -iq "y*" "$confirm"
+            exec ssh $target_host
+        else
+            cd $HOME
+        end
+    end
 end
