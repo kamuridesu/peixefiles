@@ -1,6 +1,5 @@
 function shredir --description "Wraps shred to delete dirs and shred files"
-    argparse f/force -- $argv
-    argparse v/verbose -- $argv
+    argparse f/force v/verbose -- $argv
 
     set -l DIR "$argv"
     if test -z "$DIR"
